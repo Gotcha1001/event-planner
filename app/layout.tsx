@@ -66,6 +66,7 @@ import "./globals.css";
 import Link from "next/link";
 import { UserButton } from "@neondatabase/auth/react";
 import { Providers } from "./providers";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,29 +95,31 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <Providers>
-          <>
-            <header className="border-b border-slate-700 bg-slate-900/90 backdrop-blur">
-              <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4">
-                <Link
-                  href={"/"}
-                  className="text-sm font-semibold tracking-wide"
-                >
-                  EventPlanner
-                </Link>
-                <nav className="flex items-center gap-4">
-                  <Link href={"/dashboard"} className="text-sm text-muted">
-                    Dashboard
+        <Suspense>
+          <Providers>
+            <>
+              <header className="border-b border-slate-700 bg-slate-900/90 backdrop-blur">
+                <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4">
+                  <Link
+                    href={"/"}
+                    className="text-sm font-semibold tracking-wide"
+                  >
+                    EventPlanner
                   </Link>
-                  <UserButton size="icon" />
-                </nav>
-              </div>
-            </header>
-            <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 py-8">
-              {children}
-            </main>
-          </>
-        </Providers>
+                  <nav className="flex items-center gap-4">
+                    <Link href={"/dashboard"} className="text-sm text-muted">
+                      Dashboard
+                    </Link>
+                    <UserButton size="icon" />
+                  </nav>
+                </div>
+              </header>
+              <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 py-8">
+                {children}
+              </main>
+            </>
+          </Providers>
+        </Suspense>
       </body>
     </html>
   );
