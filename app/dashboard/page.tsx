@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 export default async function DashboardPage() {
   const session = await getSession();
   if (!session.data) {
-    redirect("/login");
+    redirect("/");
   }
 
   return <DashboardContent userId={session.data.user.id} />;
