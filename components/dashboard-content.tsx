@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { prisma } from "@/lib/prisma";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import type { RsvpStatus as PrismaRsvpStatus } from "@/app/generated/prisma/enums";
+import type { RsvpStatus as PrismaRsvpStatus } from "@/app/generated/prisma/client";
 
 export function countByStatus(rsvps: { status: PrismaRsvpStatus }[]) {
   let goingCount = 0;
