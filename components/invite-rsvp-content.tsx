@@ -119,7 +119,7 @@ import { Button } from "./ui/button";
 import { prisma } from "@/lib/prisma";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import type { RsvpStatus as PrismaRsvpStatus } from "@/app/generated/prisma/enums";
+import type { RsvpStatus as PrismaRsvpStatus } from "@/app/generated/prisma/client";
 import { notFound } from "next/navigation";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
