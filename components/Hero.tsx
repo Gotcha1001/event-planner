@@ -76,7 +76,7 @@ export function Hero() {
             className="flex flex-wrap gap-3.5"
           >
             <button
-              onClick={() => router.push("/events/new")}
+              onClick={() => router.push("/auth/sign-up?redirect=/events/new")}
               className="rounded-[10px] bg-[#1A1A1A] px-6 py-3.5 text-[15px] font-medium text-[#FAF6F0] transition-transform active:scale-[0.98]"
             >
               Create your first event
