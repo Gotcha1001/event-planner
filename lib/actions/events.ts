@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { getSession } from "../auth/server";
 import { prisma } from "../prisma";
 import { EventDetailContent } from "@/components/event-detail-content";
-import { RsvpStatus } from "@/app/generated/prisma/enums";
+import { RsvpStatus } from "@/app/generated/prisma/client";
 
 function parseCreateEvent(formData: FormData) {
   const title = String(formData.get("title") ?? "").trim();
